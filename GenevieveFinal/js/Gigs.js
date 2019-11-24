@@ -1,11 +1,15 @@
+/*XML request variable*/
 var request = new XMLHttpRequest();
+/*variable to hold all data when concatenated*/
 var data = '';
+/*Arrays to hold received data from api*/
 var gigDates = [];
 var gigTimes = [];
 var gigVenues = [];
 var gigCity = [];
 var gigUrl = [];
 
+/*function to find the month to output in word format rather than number format*/
 function findMonth(month){
   var theMonth = month.slice(5,7);
   //console.log(theMonth);
@@ -47,12 +51,14 @@ function findMonth(month){
   }
 }
 
+/*Function to find the date in the date variable*/
 function findDate(date){
   var theDate = date.slice(8,10);
   //console.log(theDate);
   return theDate;
 }
 
+/*function to work through the dates and output the processed dates and add them to the gigDates array*/
 function processDates(){
   for (var i=0; i<gigDates.length; i++){
     if (gigDates[i] != null){
@@ -65,6 +71,7 @@ function processDates(){
   }
 }
 
+/*function to find the time of the gig by iterating through all recieved dates from the api*/
 function processTimes(){
   for (var i=0; i<gigDates.length; i++){
     if (gigTimes[i] != null){
@@ -73,6 +80,7 @@ function processTimes(){
   }
 }
 
+/*function to iterate through the returned api arrays and move data into the appropriate local arrays*/
 function getGigData(eventArray){
   for (var i=0; i<eventArray.length; i++){
     gigDates[i] = eventArray[i].start.date;
@@ -96,11 +104,13 @@ function getGigData(eventArray){
   processTimes();
 }
 
+/*Function to call XML requests to get the data from the gig listing api*/
 function getData(){
   request.open('GET','https://api.songkick.com/api/3.0/artists/4618368/calendar.json?apikey=8r24OmrAooGLpUbX',true);
   request.send();
 }
 
+/*function to create a link to the original data from the api server, the api developers request this is given*/
 function createAnchorNode(anchor,link){
   var anchor = document.createElement('a');
   anchor.setAttribute("href",link);
@@ -109,6 +119,7 @@ function createAnchorNode(anchor,link){
   return anchor;
 }
 
+/*function to create paragraph data*/
 function createParaNode(para,text){
   var para = document.createElement('p');
   var tNode = document.createTextNode(text)
@@ -116,6 +127,7 @@ function createParaNode(para,text){
   return para;
 }
 
+/*function to add details to produce the div*/
 function addDetails(detailsDiv, eventName, location, skEventLink){
   var eventPara = createParaNode(eventPara,eventName);
   eventPara.setAttribute("class","eventPara");
@@ -129,6 +141,7 @@ function addDetails(detailsDiv, eventName, location, skEventLink){
   return detailsDiv;
 }
 
+/*function to add the date to the div*/
 function addDate(dateDiv,date,time){
   var datePara = createParaNode(datePara,date);
   datePara.setAttribute("class","dataPara");
@@ -141,6 +154,7 @@ function addDate(dateDiv,date,time){
   return dateDiv;
 }
 
+/*function to create a gig from information provided*/
 function createGig(theSection,i){
   console.log(data.resultsPage);
   var gigDiv = document.createElement('div');
@@ -155,6 +169,7 @@ function createGig(theSection,i){
   return theSection;
 }
 
+/*function to parse the data on xml request and produce the div for appending*/
 request.onload = function(){
   data = JSON.parse(this.response);
   if (request.status >= 200 && request.status < 400) {
@@ -173,6 +188,7 @@ request.onload = function(){
   }
 }
 
+/*onload function to call getData*/
 window.onload=function(){
   getData();
 }
