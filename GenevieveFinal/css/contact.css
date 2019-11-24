@@ -1,0 +1,81 @@
+section{
+  text-align: center;
+  padding-bottom: 2vw;
+  padding-top: 2vw;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+#contactMain{
+  display: flex;
+}
+
+#text{
+  flex-direction: column;
+}
+
+p{
+  font-size: 2.2vw;
+  color:black;
+}
+
+p:hover{
+  color:blue;
+}
+
+.nonLink:hover{
+  color:black;
+}
+
+h1{
+  padding-bottom: 2vw;
+  font-size: 3vw;
+}
+
+@media(max-width:1200px){
+  p{font-size: 2.1vw;}
+  #fbLink{font-size:1.5vw;}
+}
+
+@media(max-width:990px){
+  p{font-size: 1.9vw;}
+  #email{font-size:1.5vw;}
+}
+
+@media(max-width:850px){
+  p{font-size: 2.1vw;}
+  #email{font-size:1.8vw;}
+}
+
+@media(max-width:768px){
+  p{font-size: 1.7vw;}
+  #email{font-size:1.6vw;}
+}
+
+@media(max-width:700px){
+  p{font-size: 1.9vw;}
+  #email{font-size:1.7vw;}
+}
+
+@media(max-width:630px){
+  p{font-size: 2.1vw;}
+  #email{font-size:1.9vw;}
+  h1{font-size:3.6vw;}
+}
+
+@media(max-width:573px){
+  p{font-size: 2.4vw;}
+  #email{font-size:2.2vw;}
+}
+
+@media(max-width:474px){
+  p{font-size: 3vw;}
+  #email{font-size:2.7vw;}
+  h1{font-size:4.5vw;}
+}
+
+@media(max-width:395px){
+  p{font-size: 3vw;}
+  #fbLink{font-size:3.7vw;}
+  h1{font-size:5.1vw;}
+}

@@ -1,0 +1,38 @@
+body{
+  margin:0px 0px;
+  padding:0px 0px;
+  border:0px 0px;
+  background-color: #f5eceb;
+  font-family: 'Montserrat', sans-serif;
+}
+
+img{
+  width:100%;
+}
+
+section{
+  background-color: white;
+  padding-top:3vw;
+  padding-bottom:3vw;
+  margin-bottom:0.7vw;
+  margin-top:0.7vw;
+}
+
+.navbar{
+  background-color:white !important;
+}
+
+nav{
+  margin-top:0.7vw;
+  margin-bottom:0.7vw;
+}
+
+.line{
+  height:1px;
+  background-color:black;
+}
+
+#partition{
+  background-color:#f5eceb;
+  width:0.7vw;
+}

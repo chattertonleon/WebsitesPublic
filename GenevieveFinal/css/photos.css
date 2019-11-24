@@ -1,0 +1,28 @@
+h1{
+  text-align: center;
+}
+
+.twoHori{
+  padding-top: 1.5vw;
+  padding-bottom:1.5vw;
+  display:flex;
+}
+
+.nonHeader{
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+}
+
+@media (max-width:468px) {
+  .twoHori{
+    flex-direction: column;
+  }
+  .twoHori{
+    padding-top:0;
+    padding-bottom:0;
+  }
+  .nonHeader{
+    padding-top: 1.5vw;
+    padding-bottom:1.5vw;
+  }
+}

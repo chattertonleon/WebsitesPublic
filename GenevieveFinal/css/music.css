@@ -1,0 +1,18 @@
+article{
+  display: flex;
+  margin-bottom:1.4vw;
+}
+
+img{
+  margin:auto;
+}
+
+@media (max-width:768px) {
+  article{
+    flex-direction: column;
+  }
+
+  iframe{
+    margin-top:1.4vw;
+  }
+}
